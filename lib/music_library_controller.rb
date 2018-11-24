@@ -95,5 +95,5 @@ class MusicLibraryController
         puts "#{i}. #{song_obj.name} - #{song_obj.artist.name}"
         i += 1
       end
-
+    end
 end
