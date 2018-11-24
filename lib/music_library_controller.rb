@@ -104,5 +104,6 @@ class MusicLibraryController
     self.list_songs
     if user.choice.between?(1, Songs.count)
       puts "plays"
+    end
   end
 end
