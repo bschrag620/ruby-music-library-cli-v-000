@@ -97,8 +97,8 @@ class MusicLibraryController
   def play_song
     puts "Which song number would you like to play?"
     self.list_songs
-    user_choice = gets.strip.to_i
-    if user_choice.between?(1, Song.all.count)
+    user_choice = gets.strip
+    if user_choice.to_i.between?(1, Song.all.count)
       puts "Made it past user_choice"
       sorted_list = Song.alphabetical_songs
       song = sorted_list[user_choice - 1]
