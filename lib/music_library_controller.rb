@@ -25,6 +25,19 @@ class MusicLibraryController
     end
   end
 
+  def alphabetical_songs
+    i = 1
+    song_list = []
+    Song.all.each do |song|
+      song_list << song.name
+    end
+    song_objects = []
+    song_list.sort.collect do |song|
+      Song.find_by_name(song)
+    end
+  end
+    
+
   def list_songs
     i = 1
     song_list = []
