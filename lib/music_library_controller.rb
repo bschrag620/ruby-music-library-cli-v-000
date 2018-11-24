@@ -71,8 +71,8 @@ class MusicLibraryController
         puts "#{i}. #{song.name}"
         i += 1
       end
-    else
-      self.list_songs_by_artist
+    #else
+    #  self.list_songs_by_artist
     end
   end
 end
