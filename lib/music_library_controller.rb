@@ -25,21 +25,9 @@ class MusicLibraryController
     end
   end
 
-  def alphabetical_songs
-    i = 1
-    song_list = []
-    Song.all.each do |song|
-      song_list << song.name
-    end
-    song_objects = []
-    song_list.sort.collect do |song|
-      Song.find_by_name(song)
-    end
-  end
-
-
   def list_songs
-    song_list = self.alphabetical
+    sorted_list = Song.alphabetical_songs
+    sorted_list.each do |song|
       current_song = Song.find_by_name(song)
       puts "#{i}. #{current_song.artist.name} - #{current_song.name} - #{current_song.genre.name}"
       i += 1
