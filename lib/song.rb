@@ -61,4 +61,16 @@ class Song
     self.new_from_filename(filename)
   end
 
+  def self.alphabetical_songs
+    i = 1
+    song_list = []
+    @@all.each do |song|
+      song_list << song.name
+    end
+    song_objects = []
+    song_list.sort.collect do |song|
+      self.find_by_name(song)
+    end
+  end
+
 end
