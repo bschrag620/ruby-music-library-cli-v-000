@@ -99,7 +99,9 @@ class MusicLibraryController
     self.list_songs
     user_choice = gets.strip.to_i
     if user_choice.between?(1, Song.all.count)
-      puts "Playing "
+      sorted_list = Song.alphabetical_songs
+      song = sorted_list[user_choice - 1]
+      puts "Playing #{song.name} by #{song.artist}"
     end
   end
 end
