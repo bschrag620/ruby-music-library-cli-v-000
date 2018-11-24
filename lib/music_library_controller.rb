@@ -36,15 +36,10 @@ class MusicLibraryController
       Song.find_by_name(song)
     end
   end
-    
+
 
   def list_songs
-    i = 1
-    song_list = []
-    Song.all.each do |song|
-      song_list << song.name
-    end
-    song_list.sort.each do |song|
+    song_list = self.alphabetical
       current_song = Song.find_by_name(song)
       puts "#{i}. #{current_song.artist.name} - #{current_song.name} - #{current_song.genre.name}"
       i += 1
