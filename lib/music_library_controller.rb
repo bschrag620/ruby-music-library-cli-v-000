@@ -104,7 +104,7 @@ class MusicLibraryController
       song = sorted_list[user_choice - 1]
       puts "Playing #{song.name} by #{song.artist}"
     else
-      puts "Didn't clear user_choice with choice of: #{user_choice}"
+      self.play_song
     end
   end
 end
