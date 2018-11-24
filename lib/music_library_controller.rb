@@ -92,7 +92,7 @@ class MusicLibraryController
       end
       unsorted_song_list.sort.each do |song|
         song_obj = Song.find_by_name(song)
-        puts "#{i}. #{song_obj.name} - #{song_obj.artist.name}"
+        puts "#{i}. #{song_obj.artist.name} - #{song_obj.name}"
         i += 1
       end
     end
