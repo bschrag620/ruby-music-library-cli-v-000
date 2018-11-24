@@ -100,7 +100,7 @@ class MusicLibraryController
 
   def play_song
     puts "Which song number would you like to play?"
-    user_choice = gets.strip
+    user_choice = gets.strip.to_i
     self.list_songs
     if user_choice.between?(1, Song.all.count)
       puts "plays"
