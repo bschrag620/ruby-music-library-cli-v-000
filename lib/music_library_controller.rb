@@ -68,8 +68,12 @@ class MusicLibraryController
     if Artist.find_by_name(artist_name)
       artist = Artist.find_by_name(artist_name)
       i = 1
-      artist.songs.sort.each do |song|
-        puts "#{i}. #{song.name}"
+      unsorted_song_list = []
+      artist.songs.each do |song|
+        unsorted_song_list << song.name
+      end
+      unsorted_song_list.sort.each do |song|
+        puts "#{i}. #{song}"
         i += 1
       end
     #else
