@@ -74,8 +74,5 @@ class MusicLibraryController
     else
       self.list_songs_by_artist
     end
-    
-    #else
-    
   end
 end
